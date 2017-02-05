@@ -1,5 +1,6 @@
 # Gaziri
-
+[![Build Status](https://travis-ci.org/hypersolid/gaziri.svg?branch=master)](https://travis-ci.org/hypersolid/gaziri)
+[![Go Report Card](https://goreportcard.com/badge/github.com/hypersolid/gaziri)](https://goreportcard.com/report/github.com/hypersolid/gaziri)
 ## About
 It's a tiny DRY lib for goroutine pooling and throttling.
 
