@@ -11,6 +11,7 @@ It's a tiny DRY lib for goroutine pooling and throttling.
 ```golang
 pool := gaziri.NewPool(
   func(value interface{}) interface{} {
+    // works goes here
     time.Sleep(2 * time.Second)
     return value.(int) * 2
   },
@@ -20,14 +21,11 @@ pool := gaziri.NewPool(
 
 go func() {
   for i := 0; i < jobs; i++ {
-    pool.Input <- i
+    pool.Input <- i // enqueue tasks
   }
 }()
 
 for i := 0; i < jobs; i++ {
-  <-pool.Output
-  if i%10 == 0 {
-    fmt.Println(pool.WorkersCount(), "workers")
-  }
+  <-pool.Output // get results
 }
 ```
