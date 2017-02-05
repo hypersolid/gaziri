@@ -1,0 +1,17 @@
+language: go
+
+go:
+  - 1.7.4
+  - master
+
+script:
+  - go test .
+  - go test -bench=. -benchmem
+
+install: true
+
+git:
+  depth: 1
+
+notifications:
+  email: false
