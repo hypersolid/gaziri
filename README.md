@@ -1,4 +1,11 @@
-# Gaziri (газыри́) — tiny lib for goroutine pooling and throttling
+# Gaziri
+
+## About
+It's a tiny DRY lib for goroutine pooling and throttling.
+
+1. Provide a worker function that takes `interface{}` as input and returns `interface{}` as output.
+1. Set your limits on number of running tasks per second `maxWorkersPerSecond` and task in general `maxWorkers`.
+1. Shoot your tasks int `Input` channel and listen to `Output`.
 
 ## Quickstart
 ```golang
